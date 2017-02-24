@@ -26,10 +26,19 @@
   "content_scripts": [
     {
       "matches": [
-        "http://www.google.co.jp/*",
-        "https://www.google.co.jp/*"
+        "*://www.google.co.jp/*"
       ],
-      "js": ["js/jquery-2.1.1.min.js", "js/contentscript.js"],
+      "js": ["js/jquery-2.1.1.min.js", "js/contentscript-g.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "exclude_matches": [
+        "*://www.google.co.jp/*"
+      ],
+      "js": ["js/jquery-2.1.1.min.js", "js/contentscript-o.js"],
       "run_at": "document_end"
     }
   ]

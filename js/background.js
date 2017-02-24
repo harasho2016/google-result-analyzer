@@ -2,9 +2,9 @@ var dataset;
 chrome.runtime.onMessage.addListener(
   function(request,sender,sendResponse){
     // データの受け取り
-    dataset = request.hrefs
+    dataset = request.result
     // コールバック関数
-    sendResponse("finish")
+    sendResponse(dataset)
   }
 );
 
